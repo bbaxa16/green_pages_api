@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       render json: {status: 401, message: "Unauthorized"}
     end
   end
-  
+
 
   # GET /users
   def index
@@ -53,6 +53,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  #user_params | add confirmation password here
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
 
   #Create a TOKEN
   def create_token(id, username)
