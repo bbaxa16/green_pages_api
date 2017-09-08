@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       render json: {status: 401, message: "Unauthorized"}
     end
   end
-  
+
 
   # GET /users
   def index
@@ -54,6 +54,11 @@ class UsersController < ApplicationController
 
   private
 
+  #user_params | add confirmation password here
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
+
   #Create a TOKEN
   def create_token(id, username)
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
@@ -79,6 +84,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :password_digest)
+      params.require(:user).permit(:username, :password)
     end
 end
