@@ -54,11 +54,6 @@ class UsersController < ApplicationController
 
   private
 
-  #user_params | add confirmation password here
-  def user_params
-    params.require(:user).permit(:username, :password)
-  end
-
   #Create a TOKEN
   def create_token(id, username)
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
