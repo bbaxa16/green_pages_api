@@ -1558,3 +1558,287 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:40:02 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:40:04 -0600
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:40:38 -0600
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:41:50 -0600
+Processing by StrainsController#index as HTML
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:41:50 -0600
+Processing by UsersController#index as HTML
+  [1m[36mStrain Load (1.9ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:43:21 -0600
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:43:21 -0600
+Processing by UsersController#index as HTML
+Processing by StrainsController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 63ms (Views: 0.1ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:43:48 -0600
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:43:48 -0600
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (2.2ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 61ms (Views: 0.4ms | ActiveRecord: 29.3ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:44:09 -0600
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:44:09 -0600
+Processing by StrainsController#index as HTML
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:45:13 -0600
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:45:13 -0600
+Processing by UsersController#index as HTML
+Processing by StrainsController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (20.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:48:06 -0600
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:48:06 -0600
+Processing by UsersController#index as HTML
+Processing by StrainsController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (1.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:48:10 -0600
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:48:10 -0600
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:48:54 -0600
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:48:54 -0600
+Processing by StrainsController#index as HTML
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (0.8ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 50ms (Views: 0.2ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:49:17 -0600
+Processing by UsersController#index as HTML
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:49:17 -0600
+Filter chain halted as :authenticate_token rendered or redirected
+Processing by StrainsController#index as HTML
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (1.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:50:32 -0600
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:50:32 -0600
+Processing by UsersController#index as HTML
+Processing by StrainsController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStrain Load (7.0ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:50:58 -0600
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:51:05 -0600
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-11 16:51:09 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:51:14 -0600
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 9]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "ledgers" ON "users"."id" = "ledgers"."user_id" WHERE "ledgers"."strain_id" = $1[0m  [["strain_id", 10]]
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
