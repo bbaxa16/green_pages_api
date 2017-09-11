@@ -754,3 +754,79 @@ Filter chain halted as :authenticate_token rendered or redirected
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (33.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLedgers (20170911210304)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1078.0ms)[0m  [1m[35mCREATE TABLE "ledgers" ("id" bigserial primary key, "user_id" bigint, "strain_id" bigint, "qty" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_f7b494f4c3"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4522ab74e1"
+FOREIGN KEY ("strain_id")
+  REFERENCES "strains" ("id")
+)[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_user_id" ON "ledgers"  ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_strain_id" ON "ledgers"  ("strain_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911210304"]]
+  [1m[35m (57.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (20.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT  "strains".* FROM "strains" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mLedger Load (78.6ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT  "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."strain_id" = $2 LIMIT $3[0m  [["user_id", 1], ["strain_id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ledgers" WHERE "ledgers"."strain_id" = $1 AND "ledgers"."user_id" = $2 LIMIT $3[0m  [["strain_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (131.2ms)[0m  [1m[32mINSERT INTO "ledgers" ("user_id", "strain_id", "qty", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 1], ["qty", 1], ["created_at", "2017-09-11 21:09:52.608904"], ["updated_at", "2017-09-11 21:09:52.608904"]]
+  [1m[35m (55.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.6ms)[0m  [1m[34mSELECT  "strains".* FROM "strains" INNER JOIN "ledgers" ON "strains"."id" = "ledgers"."strain_id" WHERE "ledgers"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (27.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFavArrayToUser (20170911212448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "favorites" text[][0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911212448"]]
+  [1m[35m (1109.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovingFavoritesColumn (20170911213848)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (17.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovingFavoritesColumn (20170911213848)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovingFavoritesColumn (20170911213848)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (126.4ms)[0m  [1m[35mALTER TABLE "users" DROP "favorites"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911213848"]]
+  [1m[35m (27.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddingFavoritesArrayAgain (20170911213957)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (241.9ms)[0m  [1m[35mALTER TABLE "users" ADD "favorites" text[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911213957"]]
+  [1m[35m (363.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (19.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "billybob"], ["LIMIT", 1]]
+  [1m[35mSQL (39.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at", "favorites") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "billybob"], ["password_digest", "$2a$10$GTAgEIONZCcDoROMH/UqP.3pTv/vzorjjB5EraJok1jDJIoVh7Ex6"], ["created_at", "2017-09-11 21:43:29.346445"], ["updated_at", "2017-09-11 21:43:29.346445"], ["favorites", "{3,2,hello}"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT  "strains".* FROM "strains" LIMIT $1[0m  [["LIMIT", 11]]
