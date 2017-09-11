@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
     puts token = JWT.decode(token_input, ENV['JWT_SECRET'], true, { :algorithm => 'HS256'})
     JWT.decode(token_input, ENV['JWT_SECRET'], true, { :algorithm => 'HS256'})
   rescue
-    render json: {status: 401, message: 'Unauthorized'}
+    render json: {status: 401, message: 'Unauthorized hi'}
   end
 
   def get_current_user
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::API
     puts "AUTHORIZE USER"
     puts "user id: #{get_current_user.id}"
     puts "params: #{params[:id]}"
-    render json: { status: 401, message: "Unauthorized" } unless get_current_user.id == params[:id].to_i
+    render json: { status: 401, message: "Unauthorized hi" } unless get_current_user.id == params[:id].to_i
   end
 
 end
