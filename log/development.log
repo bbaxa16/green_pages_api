@@ -656,3 +656,34 @@ Processing by UsersController#login as */*
 Completed 200 OK in 97ms (Views: 3.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 13:11:37 -0400
+  [1m[35m (84.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as */*
+Completed 200 OK in 787ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 13:29:47 -0400
+Processing by StrainsController#index as */*
+Completed 200 OK in 828ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 13:41:19 -0400
+Processing by StrainsController#index as */*
+Completed 200 OK in 905ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 14:06:05 -0400
+Processing by StrainsController#index as */*
+Completed 200 OK in 527ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 14:06:15 -0400
+Processing by StrainsController#index as */*
+Completed 200 OK in 462ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/strains/index" for 127.0.0.1 at 2017-09-11 14:08:02 -0400
+Processing by StrainsController#index as */*
+Completed 200 OK in 900ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
