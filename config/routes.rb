@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ledgers
+  resources :strains
   resources :users do
     collection do
       post '/login', to: 'users#login'
