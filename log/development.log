@@ -656,3 +656,101 @@ Processing by UsersController#login as */*
 Completed 200 OK in 97ms (Views: 3.0ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (94.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (54.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStrains (20170911202115)
+  [1m[35m (16.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (919.2ms)[0m  [1m[35mCREATE TABLE "strains" ("id" bigserial primary key, "name" character varying, "type" character varying, "img" character varying, "fav" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911202115"]]
+  [1m[35m (1925.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (60.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (27.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:41:54 -0400
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:41:55 -0400
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (105.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as HTML
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+Completed 200 OK in 17ms (Views: 1.6ms | ActiveRecord: 2.9ms)
+
+
+Completed 200 OK in 17ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:41:58 -0400
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 6.4ms)
+
+
+  [1m[35m (31.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3249609317874508470)[0m
+  [1m[35m (30.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to FixColumnName (20170911204425)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (64.1ms)[0m  [1m[35mALTER TABLE "strains" RENAME COLUMN "type" TO "group"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170911204425"]]
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3249609317874508470)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (31.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (31.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (48.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sour Diesel"], ["group", "Sativa"], ["img", "https://cdn.allbud.com/image/upload/s--n2WpMtEi--/c_limit,h_600,w_800/v1444939376/images/strain/super-sour-diesel/2133/anqvgcypfjr35fajhvf8.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.368052"], ["updated_at", "2017-09-11 20:47:47.368052"]]
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Blue Dream"], ["group", "Hybrid"], ["img", "http://www.medicalmarijuanastrains.com/wp-content/uploads/tdomf/14321/BlueDreamMarijuana.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.443699"], ["updated_at", "2017-09-11 20:47:47.443699"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Girl Scout Cookies"], ["group", "Hybrid"], ["img", "https://cannabisbuyer.com/wp-content/uploads/2016/11/Girl-Scout-Cookies-Strain-Nugs.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.446049"], ["updated_at", "2017-09-11 20:47:47.446049"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Green Crack"], ["group", "Sativa"], ["img", "https://www.marijuana.com/wp-content/uploads/2014/04/Screen-Shot-2016-05-11-at-7.52.23-AM.png"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.447974"], ["updated_at", "2017-09-11 20:47:47.447974"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (34.4ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Granddaddy Purple"], ["group", "Indica"], ["img", "https://www.420magazine.com/gallery/data/500/GrandDaddyPurple_RVC_3-2011-1.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.450068"], ["updated_at", "2017-09-11 20:47:47.450068"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "White Widow"], ["group", "Hybrid"], ["img", "http://www.sumoseeds.com/image/cache//SumoSeeds/buds/white-widow-original-500x500.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.486894"], ["updated_at", "2017-09-11 20:47:47.486894"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gorilla Glue #4"], ["group", "Hybrid"], ["img", "http://www.thecannabist.co/wp-content/uploads/2014/12/gorillaglue4-web-800x480.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.488823"], ["updated_at", "2017-09-11 20:47:47.488823"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bubba Kush"], ["group", "Indica"], ["img", "https://www.dinafem.org/media/photologue/photos/cache/Autodinafem-Bubba_Kush_Autoflowering-01-0175_gallery_full.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.490754"], ["updated_at", "2017-09-11 20:47:47.490754"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Pineapple Express"], ["group", "Hybrid"], ["img", "http://www.thesmokingbud.com/sites/default/files/styles/stt_article_top/public/031616/pa.jpg?itok=Jcp3_Jau"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.492742"], ["updated_at", "2017-09-11 20:47:47.492742"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (32.1ms)[0m  [1m[32mINSERT INTO "strains" ("name", "group", "img", "fav", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alaskan Thunder Fuck"], ["group", "Sativa"], ["img", "http://www.thenug.com/sites/default/pub/112414/thenug-zi34aKQCNV.jpg"], ["fav", 0], ["created_at", "2017-09-11 20:47:47.494739"], ["updated_at", "2017-09-11 20:47:47.494739"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:48:03 -0400
+Started GET "/strains" for 127.0.0.1 at 2017-09-11 16:48:04 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as HTML
+Processing by StrainsController#index as HTML
+  [1m[36mStrain Load (0.8ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mStrain Load (72.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+Completed 200 OK in 89ms (Views: 3.1ms | ActiveRecord: 72.6ms)
+
+
+Completed 200 OK in 97ms (Views: 80.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-11 16:48:29 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
